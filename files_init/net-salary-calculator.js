@@ -1,12 +1,13 @@
-function salary(basicSalary,benefits) {
+function salary(basicSalary,benefits) {     //declaring a function (salary) with parameters basicSalary and benefits
 
-    const grossSalary = basicSalary + benefits
-    const nssf1= 0.06*8000
-    const nssf2= 0.06*(grossSalary-8000)
-    const shif= (2.75/100*grossSalary)
-    const housingLevy= (1.5/100*grossSalary)
-    const taxable = (grossSalary-housingLevy-shif-nssf2-nssf1)
-    
+    const grossSalary = basicSalary + benefits   //calculating gross income
+    const nssf1= 0.06*8000                       //calculating nssf1
+    const nssf2= 0.06*(grossSalary-8000)         //calculating nssf2
+    const shif= (2.75/100*grossSalary)           //calculating shif
+    const housingLevy= (1.5/100*grossSalary)     //calculating housing levy
+    const taxable = (grossSalary-housingLevy-shif-nssf2-nssf1)    //calculating the taxable amount
+     
+                             //PAYE//total tax payable
     if (taxable>800000) {
         totalTax = 35/100*taxable
     }
@@ -23,9 +24,9 @@ function salary(basicSalary,benefits) {
         totalTax = 10/100*taxable
 
     }
-    const netPay = grossSalary - housingLevy - shif - nssf2 - nssf1 - totalTax
+    const netPay = grossSalary - housingLevy - shif - nssf2 - nssf1 - totalTax   //salary/net payment
 
-    
+    //output all of the dependencies
     console.log( `Basic salary: ${basicSalary}`)
     console.log( `benefits: ${benefits}`)
     console.log( `gross salary: ${grossSalary}`)
@@ -36,8 +37,9 @@ function salary(basicSalary,benefits) {
     console.log( `taxable: ${taxable}`)
     console.log( `Total Taxable: ${totalTax}`)
     console.log( `NET SALARY: ${netPay}`)
-    return netPay;
+    return netPay;          //output his salary ~ net payment
         
 }
+// example given below//
 console.log(salary(10000,2000))
 
